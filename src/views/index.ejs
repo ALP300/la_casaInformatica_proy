@@ -1,21 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=  title %></title>
-    <link rel="stylesheet" href="/src/css/styles.css">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="path/to/your/styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <h1>Pantalla de Inicio - Leo</h1>
+    <%- include('partials/navigation') %>
 
-    <p>Bienvenido a la pantalla de inicio de La Casa Informatica.</p>
-    <nav>
-        <ul>
-            <li><a href="/about">Acerca de</a></li>
-            <li><a href="/services">Servicios</a></li>
-            <li><a href="/contact">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="bg-gradient-to-r from-blue-800 via-blue-400 to-white">
+        <section id="hero" class="hero-section">
+            <div class="container flex flex-col-reverse items-center px-6 mx-auto md:flex-row space-y-5 md:space-y-0">
+                <div class="flex flex-col mb-16 md:w-1/2">
+                    <h1 class="text-white text-4xl md:text-6xl font-bold text-center md:text-left leading-tight">
+                        LA CASA INFORMÁTICA
+                    </h1>
+                    <p class="text-center text-lg md:text-2xl text-white leading-snug md:text-left mt-4 md:mt-0">
+                        Domina la Tecnología de <br class="hidden md:block"> Forma Práctica y Actualizada
+                    </p>
+                </div>
+                <div class="flex justify-center w-full md:w-1/2">
+                    <img src="/img/imagenpro.svg" alt="Logo" class="object-contain w-4/5 md:w-3/4 lg:w-full h-auto" width="800" height="800">
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+    <main class="flex flex-col items-center min-h-screen text-black">
+        <div class="courses-section min-h-[400px] flex flex-col items-center p-3 mt-6 mb-6">
+            <h2 class="text-2xl font-bold p-1 mx-auto">Explora Nuestros Cursos Más Solicitados</h2>
+            <label class="p-2 mx-auto">Listado de cursos populares de la plataforma.</label>
+            <hr class="w-1/4 mx-auto border-b-2 border-gray-600 mt-2 mb-2" />
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Cursos Establecidos Directamente en el HTML -->
+                <div class="course-card flex flex-col items-center p-3 gap-1">
+                    <h3 class="text-2xl font-bold p-1 mx-auto">Curso de Programación en Java</h3>
+                    <p class="p-2 mx-auto">Domina Java desde cero.</p>
+                    <img src="/img/java.jpg" alt="Curso de Programación Web" class="course-image" width="300" height="300">
+                </div>
+                <div class="course-card flex flex-col items-center p-3 gap-1">
+                    <h3 class="text-2xl font-bold p-1 mx-auto">Curso de JavaScript</h3>
+                    <p class="p-2 mx-auto">Domina JavaScript desde cero.</p>
+                    <img src="/img/javascript.jpg" alt="Curso de JavaScript" class="course-image" width="300" height="300">
+                </div>
+                <div class="course-card flex flex-col items-center p-3 gap-1">
+                    <h3 class="text-2xl font-bold p-1 mx-auto">Curso de Python</h3>
+                    <p class="p-2 mx-auto">Aprende Python para ciencia de datos.</p>
+                    <img src="/img/python.jpg" alt="Curso de Python" class="course-image" width="300" height="300">
+                </div>
+            </div>
+        </div>
+
+        <div class="community-section min-h-[300px] flex items-center p-3 gap-6 mt-6 mb-6">
+            <div class="flex flex-col">
+                <h3 class="text-2xl font-bold p-3 mx-auto">¡Explora nuestra comunidad!</h3>
+                <p class="p-2 mx-auto text-center font-arial">
+                    Fomenta la conversación y el intercambio de ideas con otras personas que compartan tus objetivos,<br> ¡Trabajen juntos para alcanzar sus metas!
+                </p>
+                <a href="https://discord.gg/E4J47jcEVG" target="_blank" rel="noopener noreferrer" class="p-2 mx-auto bg-blue-500 text-white rounded-full border border-blue-500 hover:bg-blue-600 transition duration-300">
+                    Discord
+                </a>
+            </div>
+            <div class="rounded-xl overflow-hidden">
+                <img src="/img/perro-pc.jpeg" alt="Next.js Logo" class="community-image" width="300" height="300">
+            </div>
+        </div>
+
+        <div class="team-section bg-blue-100 py-24 sm:py-32 rounded-xl">
+            <div class="mx-auto max-w-7xl grid gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">CONOCE A NUESTRO EQUIPO</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">Conoce a las personas que forman parte de esta gran familia.</p>
+                </div>
+                <ul role="list" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2 justify-between">
+                    <li class="team-member flex flex-row">
+                        <div class="flex items-center gap-x-6">
+                            <img src="/img/leo.jpg" alt="Foto de perfil de Leonardo Palomino" class="rounded-full" width="128" height="128">
+                            <div>
+                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Leonardo Palomino</h3>
+                                <p class="text-sm font-semibold leading-6 text-indigo-600">Founder / CEO</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="team-member flex flex-row">
+                        <div class="flex items-center gap-x-6">
+                            <img src="/img/Lucas.jpeg" alt="Foto de perfil de Lucas" class="rounded-full" width="128" height="128">
+                            <div>
+                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Lucas Espinoza</h3>
+                                <p class="text-sm font-semibold leading-6 text-indigo-600">Programador Full Stack</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="team-member flex flex-row">
+                        <div class="flex items-center gap-x-6">
+                            <img src="/img/yasser.jpeg" alt="Foto de perfil de Lucas" class="rounded-full" width="128" height="128">
+                            <div>
+                                <h3 class="text-base font-semibold leading-7 tracking-tight text-gray-900">Yasser Ávalos</h3>
+                                <p class="text-sm font-semibold leading-6 text-indigo-600">Programar Backend</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <br>
+    </main>
+
+    <div id="mostrarPeliculas">
+        <!-- Aquí se mostrarán las películas dinámicamente -->
+    </div>
+
+    
+
+    
 </body>
+<%- include('partials/footer') %>
 </html>
